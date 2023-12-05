@@ -1,4 +1,5 @@
   res    no.     area
+  35G A   1      5.011
   ASP A 154    150.086
   VAL A 155    131.918
   THR A 156     86.693
@@ -148,5 +149,4 @@
   CYS A 300     23.779
   GLY A 301     15.149
   GLU A 302    164.617
-  35G A   1      5.011
  total accessible area =   9317.44922

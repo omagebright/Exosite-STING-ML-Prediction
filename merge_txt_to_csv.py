@@ -34,3 +34,5 @@ all_data.to_csv('exosite_datamart.csv', index=False)
 
 descriptor_retrieval = all_data[['Class', 'pdb_code', 'chain_name', 'number']]
 descriptor_retrieval.to_csv('sting_descriptor_retrieval_data.csv', index=False)
+descriptor_retrieval_no = all_data[['pdb_code', 'chain_name', 'number']]
+descriptor_retrieval_no.to_csv('sting_descriptor_retrieval_data_no_class.csv', index=False)

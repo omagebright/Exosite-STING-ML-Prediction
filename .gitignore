@@ -24,3 +24,5 @@ TestResults.xml
 .git-credentials
 #This is the file needed to communicate with the sting database for the descriptors retrieval
 sting_data_descriptor_retrieval.py
+# make the file unique for retrieval
+pdb_code_chain_name.py
