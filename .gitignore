@@ -26,3 +26,5 @@ TestResults.xml
 sting_data_descriptor_retrieval.py
 # make the file unique for retrieval
 pdb_code_chain_name.py
+#added the sting descriptor retrieval
+sting_descriptor_retrieval.py
