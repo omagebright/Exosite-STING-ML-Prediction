@@ -8,10 +8,10 @@ from functools import partial
 
 
 # Define your database connection details
-user = 
-password = 
-host = 
-port = 
+user = 'sting'
+password = 'fermat'
+host = '127.0.0.1'
+port = 3306
 
 # Define the tables and columns needed
 tables_columns = {
@@ -107,7 +107,47 @@ tables_columns = {
     "entd_LHA_6_WNADist", "entd_LHA_7_WNADist"],
     'Evolutionary_Pressure': ['pdb_code', 'convert(chain_name, char(1))', 'number', "evol_press", "normalized_evol_press", "bayes_lb", 
     "bayes_ub", "bayes_std"],
-    'Graph_Descriptor_WNA': ['pdb_code', 'convert(chain_name, char(1))', 'number', 'random_walk_betweenness_WNASurf', 'bary_center_WNASurf', 'bottle_neck_WNASurf', 'eccentricity_WNADist', 'mean_neighbor_degree_WNADist', 'bary_center_WNADist', 'bottle_neck_WNADist']
+    'Graph_Descriptor_WNA': ['pdb_code', 'convert(chain_name, char(1))', 'number', "eccentricity_WNASurf", "radiality_centrality_WNASurf", "local_closeness_WNASurf", 
+    "dice_similarity_WNASurf", "mean_neighbor_degree_WNASurf", "lac_WNASurf", 
+    "mnc_WNASurf", "dmnc_WNASurf", "closeness_WNASurf", 
+    "cluster_coefficient_WNASurf", "degree_WNASurf", "betweenness_WNASurf", 
+    "random_walk_betweenness_WNASurf", "bary_center_WNASurf", "page_rank_WNASurf", 
+    "bottle_neck_WNASurf", "eccentricity_WNADist", "radiality_centrality_WNADist", 
+    "local_closeness_WNADist", "dice_similarity_WNADist", "mean_neighbor_degree_WNADist", 
+    "lac_WNADist", "mnc_WNADist", "dmnc_WNADist", "closeness_WNADist", 
+    "cluster_coefficient_WNADist", "degree_WNADist", "betweenness_WNADist", 
+    "random_walk_betweenness_WNADist", "bary_center_WNADist", "page_rank_WNADist", 
+    "bottle_neck_WNADist"],
+    'HSSP': ['pdb_code', 'convert(chain_name, char(1))', 'number', "rel_entropy", "entropy", "weight"],
+    'Hydrophobicity': ['pdb_code', 'convert(chain_name, char(1))', 'number',     "hydro_radzicka_isol_surfv", "hydro_radzicka_complex_surfv", 
+    "hydro_kite_dolitte_isol_surfv", "hydro_kite_dolitte_complex_surfv", 
+    "hydro_radzicka_isol_naccess", "hydro_radzicka_complex_naccess", 
+    "hydro_kite_dolitte_isol_naccess", "hydro_kite_dolitte_complex_naccess", 
+    "hydro_radzicka_isol_nsc", "hydro_radzicka_complex_nsc", 
+    "hydro_kite_dolitte_isol_nsc", "hydro_kite_dolitte_complex_nsc"],
+    'Residue_Contacts_WNA': ['pdb_code', 'convert(chain_name, char(1))', 'number', "hydrophobic_energy_WNASurf", "charge_attr_energy_WNASurf", 
+    "charge_repu_energy_WNASurf", "hb_mm_energy_WNASurf", 
+    "hb_ms_energy_WNASurf", "hb_ss_energy_WNASurf", 
+    "total_energy_WNASurf", "hydrophobic_energy_WNADist", 
+    "charge_attr_energy_WNADist", "charge_repu_energy_WNADist", 
+    "hb_mm_energy_WNADist", "hb_ms_energy_WNADist", 
+    "aromatic_energy_WNADist", "hb_ss_energy_WNADist", 
+    "total_energy_WNADist"],
+    'Rotamer': ['pdb_code', 'convert(chain_name, char(1))', 'number', "phi", "psi", "chi1", "chi2"],
+    'Side_Chain_Orientation_WNA': ['pdb_code', 'convert(chain_name, char(1))', 'number', "side_chain_angle_3_WNASurf", "side_chain_angle_4_WNASurf", "side_chain_angle_5_WNASurf", 
+    "side_chain_angle_6_WNASurf", "side_chain_angle_7_WNASurf", "side_chain_average_angle_3_WNASurf", 
+    "side_chain_average_angle_4_WNASurf", "side_chain_average_angle_5_WNASurf", "side_chain_average_angle_6_WNASurf", 
+    "side_chain_average_angle_7_WNASurf", "neighbors_side_chain_angle_3_WNASurf", "neighbors_side_chain_angle_4_WNASurf", 
+    "neighbors_side_chain_angle_5_WNASurf", "neighbors_side_chain_angle_6_WNASurf", "neighbors_side_chain_angle_7_WNASurf", 
+    "side_chain_angle_3_WNADist", "side_chain_angle_4_WNADist", "side_chain_angle_5_WNADist", 
+    "side_chain_angle_6_WNADist", "side_chain_angle_7_WNADist", "side_chain_average_angle_3_WNADist", 
+    "side_chain_average_angle_4_WNADist", "side_chain_average_angle_5_WNADist", "side_chain_average_angle_6_WNADist", 
+    "side_chain_average_angle_7_WNADist", "neighbors_side_chain_angle_3_WNADist", "neighbors_side_chain_angle_4_WNADist", 
+    "neighbors_side_chain_angle_5_WNADist", "neighbors_side_chain_angle_6_WNADist", "neighbors_side_chain_angle_7_WNADist"],
+    'Rotamer': ['pdb_code', 'convert(chain_name, char(1))', "solvation_3_WNASurf", "solvation_4_WNASurf", "solvation_5_WNASurf", 
+    "solvation_6_WNASurf", "solvation_7_WNASurf", "solvation_3_WNADist", 
+    "solvation_4_WNADist", "solvation_5_WNADist", "solvation_6_WNADist", 
+    "solvation_7_WNADist"],
 }
 
 # Function to establish a database connection
