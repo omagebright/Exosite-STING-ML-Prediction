@@ -36,11 +36,42 @@ The code folder contains the following files:
 
 ### SQL
 
-- Confirm colinearity among same descriptors in the database before importing
+-   Confirm colinearity among same descriptors in the database before importing
 
-``` console
-git clone 
+``` {.sqlmysql .console}
+SELECT 
+    (SUM(x*y) - SUM(x) * SUM(y) / COUNT(*)) / 
+    (SQRT(SUM(x*x) - SUM(x) * SUM(x) / COUNT(*)) * SQRT(SUM(y*y) - SUM(y) * SUM(y) / COUNT(*))) as correlation
+FROM 
+    (SELECT acc_isol_surfv as x, acc_ifr_surfv as y FROM Air LIMIT 1000000) as dt;
 ```
+
+-   How the descriptors in each column correlate with col-1 (correlation)
+
+    | S/N | Tables | Col-1           | Col-2               | Col-3 | Col-4 | Col-5 | Col-6 | Col-7 | Col-8 | Col-9 |
+    |------|--------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+    | 1\. | Air    | acc_isol_surfv  | acc_ifr_surfv (0.4) |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+    |     |        |                 |                     |       |       |       |       |       |       |       |
+
+    : Correlation \< 0.75 within table
 
 ## Usage
 
