@@ -122,7 +122,11 @@ The script will output the accuracy, precision, recall, and F1-score of the mode
 
 The following papers and websites are the sources of the data and the methods used in this project:
 
--   Neshich, G., Togawa, R. C., Mancini, A. L., Kuser, P. R., Yamagishi, M. E., Pappas, G., Torres, W. V., Campos, F. F., Ferreira, L. L., Luna, F. M., Oliveira, A. G., Miura, R. T., Inoue, M. K., Horita, L. G., de Souza, D. F., Dominiquini, F., Alvaro, A., Lima, C. S., Ogawa, F. O., Gomes, G. B., Palandrani, J. F., dos Santos, G. F., de Freitas, E. M., Mattiuz, A. R., Costa, I. C., de Almeida, C. L., Souza, S., Baudet, C., Higa, R. H. (2003). STING Millennium: a web-based suite of programs for comprehensive and simultaneous analysis of protein structure and sequence. Nucleic Acids Res, 31(13), 3386-3392. [Link]
+-   Neshich,
+    G. *et al.* Using Structural and Physical--Chemical Parameters to Identify,
+    Classify, and Predict Functional Districts in Proteins---The Role of
+    Electrostatic Potential. *Computational Electrostatics for Biological
+    Applications* 227--254 (2015) doi:10.1007/978-3-319-12211-3_12.
 
 -   Open Terminal on Linux/MacOS or Command Prompt on Windows
 
