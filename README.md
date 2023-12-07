@@ -36,8 +36,6 @@ The code folder contains the following files:
 
 ### SQL
 
--   Confirm colinearity among same descriptors in the database before importing
-
 ``` {.sqlmysql .console}
 # Calculating correlations between the tables
 
@@ -47,7 +45,7 @@ SELECT
 FROM 
     (SELECT acc_isol_surfv as x, acc_ifr_surfv as y FROM Air LIMIT 1000000) as dt;
     
-# Query for retrieval
+# Sample query for retrieval
 
 SELECT pdb_code, convert(chain_name, char(1)), number, side_chain_angle_3_WNASurf, side_chain_angle_4_WNASurf, side_chain_angle_5_WNASurf, side_chain_angle_6_WNASurf, side_chain_angle_7_WNASurf, side_chain_average_angle_3_WNASurf, side_chain_average_angle_4_WNASurf, side_chain_average_angle_5_WNASurf, side_chain_average_angle_6_WNASurf, side_chain_average_angle_7_WNASurf, neighbors_side_chain_angle_3_WNASurf, neighbors_side_chain_angle_4_WNASurf, neighbors_side_chain_angle_5_WNASurf, neighbors_side_chain_angle_6_WNASurf, neighbors_side_chain_angle_7_WNASurf, side_chain_angle_3_WNADist, side_chain_angle_4_WNADist, side_chain_angle_5_WNADist, side_chain_angle_6_WNADist, side_chain_angle_7_WNADist, side_chain_average_angle_3_WNADist, side_chain_average_angle_4_WNADist, side_chain_average_angle_5_WNADist, side_chain_average_angle_6_WNADist, side_chain_average_angle_7_WNADist, neighbors_side_chain_angle_3_WNADist, neighbors_side_chain_angle_4_WNADist, neighbors_side_chain_angle_5_WNADist, neighbors_side_chain_angle_6_WNADist, neighbors_side_chain_angle_7_WNADist FROM Side_Chain_Orientation_WNA WHERE pdb_code = '2ZMF' AND chain_name = 'A';
 
