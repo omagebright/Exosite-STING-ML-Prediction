@@ -8,10 +8,10 @@ from functools import partial
 
 
 # Define your database connection details
-user = 'sting'
-password = 'fermat'
-host = '127.0.0.1'
-port = 3306
+user = ''
+password = ''
+host = ''
+port = 
 
 # Define the tables and columns needed
 tables_columns = {
@@ -144,7 +144,7 @@ tables_columns = {
     "side_chain_average_angle_4_WNADist", "side_chain_average_angle_5_WNADist", "side_chain_average_angle_6_WNADist", 
     "side_chain_average_angle_7_WNADist", "neighbors_side_chain_angle_3_WNADist", "neighbors_side_chain_angle_4_WNADist", 
     "neighbors_side_chain_angle_5_WNADist", "neighbors_side_chain_angle_6_WNADist", "neighbors_side_chain_angle_7_WNADist"],
-    'Rotamer': ['pdb_code', 'convert(chain_name, char(1))', "solvation_3_WNASurf", "solvation_4_WNASurf", "solvation_5_WNASurf", 
+    'Solvation_WNA': ['pdb_code', 'convert(chain_name, char(1))', "solvation_3_WNASurf", "solvation_4_WNASurf", "solvation_5_WNASurf", 
     "solvation_6_WNASurf", "solvation_7_WNASurf", "solvation_3_WNADist", 
     "solvation_4_WNADist", "solvation_5_WNADist", "solvation_6_WNADist", 
     "solvation_7_WNADist"],
