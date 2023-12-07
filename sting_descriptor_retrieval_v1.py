@@ -7,13 +7,13 @@ import os
 from functools import partial
 
 
-# Define your database connection details
-user = ''
-password = ''
-host = ''
-port = 
+# Defining the database connection details
+user = '****'
+password = '****'
+host = '*****'
+port = ****
 
-# Define the tables and columns needed
+# The tables and columns needed: We needed to be meticulous each table was reviewed for selection
 tables_columns = {
     'Air': ['pdb_code', 'convert(chain_name, char(1))', 'number', "acc_isol_surfv", "acc_isol_naccess", "acc_isol_nsc", 
     "acc_complex_surfv", "acc_complex_naccess", "acc_complex_nsc", 
@@ -148,6 +148,18 @@ tables_columns = {
     "solvation_6_WNASurf", "solvation_7_WNASurf", "solvation_3_WNADist", 
     "solvation_4_WNADist", "solvation_5_WNADist", "solvation_6_WNADist", 
     "solvation_7_WNADist"],
+    'Stride': ['pdb_code', 'convert(chain_name, char(1))', 'number', "phi", "psi", "accessibility"],
+    'Unused_Contacts_WNA': ['pdb_code', 'convert(chain_name, char(1))', 'number', "hydrophobic_uc_energy_WNASurf", "total_energy_WNASurf", "hydrophobic_uc_energy_WNADist", "total_energy_WNADist"],
+    'Weighted_Contact_Number_WNA': ['pdb_code', 'convert(chain_name, char(1))', 'number',     "weighted_contact_number_WNASurf",
+    "avg_weighted_contact_number_k_2_WNASurf",
+    "avg_weighted_contact_number_k_3_WNASurf",
+    "avg_weighted_contact_number_k_4_WNASurf",
+    "avg_weighted_contact_number_k_5_WNASurf",
+    "weighted_contact_number_WNADist",
+    "avg_weighted_contact_number_k_2_WNADist",
+    "avg_weighted_contact_number_k_3_WNADist",
+    "avg_weighted_contact_number_k_4_WNADist",
+    "avg_weighted_contact_number_k_5_WNADist"],
 }
 
 # Function to establish a database connection
@@ -207,7 +219,7 @@ def process_row_and_save(row, output_csv):
     final_result.to_csv(output_csv, mode='a', header=not os.path.exists(output_csv), index=False)
 
 # Read the input data
-data = pd.read_csv('train.csv', nrows=10)
+data = pd.read_csv('train.csv')
 
 # Define the output CSV file
 output_csv = 'data_final_sting_descriptors_0.csv'

@@ -28,3 +28,7 @@ sting_data_descriptor_retrieval.py
 pdb_code_chain_name.py
 #added the sting descriptor retrieval
 sting_descriptor_retrieval.py
+#added the intermediary descriptor file
+data_final_sting_descriptors_0.csv
+#The train exosite sting file for the time being
+train_exosite_sting_descriptors.csv
