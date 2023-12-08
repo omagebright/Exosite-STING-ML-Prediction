@@ -32,3 +32,5 @@ sting_descriptor_retrieval.py
 data_final_sting_descriptors_0.csv
 #The train exosite sting file for the time being
 train_exosite_sting_descriptors.csv
+#This the same as the v2 retrieval
+sting_descriptor_retrieval2.py
