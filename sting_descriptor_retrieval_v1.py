@@ -7,13 +7,13 @@ import os
 from functools import partial
 
 
-# Defining the database connection details
+# Define your database connection details
 user = '****'
-password = '****'
-host = '*****'
+password = '*****'
+host = '*******'
 port = ****
 
-# The tables and columns needed: We needed to be meticulous each table was reviewed for selection
+# Define the tables and columns needed
 tables_columns = {
     'Air': ['pdb_code', 'convert(chain_name, char(1))', 'number', "acc_isol_surfv", "acc_isol_naccess", "acc_isol_nsc", 
     "acc_complex_surfv", "acc_complex_naccess", "acc_complex_nsc", 
@@ -160,6 +160,8 @@ tables_columns = {
     "avg_weighted_contact_number_k_3_WNADist",
     "avg_weighted_contact_number_k_4_WNADist",
     "avg_weighted_contact_number_k_5_WNADist"],
+    'PocketResidues': ['pdb_code', 'convert(chain_name, char(1))', 'number', "pocket_number", "volume", "area"],
+    'Hydrophobic_Patch_Residue': ['pdb_code', 'convert(chain_name, char(1))', 'number', "patch_number", "patch_area"]
 }
 
 # Function to establish a database connection
