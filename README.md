@@ -102,35 +102,21 @@ FROM
 | Unused_Contacts_WNA         | pdb_code, convert(chain_name, char(1)), number, hydrophobic_uc_energy_WNASurf, total_energy_WNASurf, hydrophobic_uc_energy_WNADist, total_energy_WNADist                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | Weighted_Contact_Number_WNA | pdb_code, convert(chain_name, char(1)), number, weighted_contact_number_WNASurf, avg_weighted_contact_number_k\_2_WNASurf, avg_weighted_contact_number_k\_3_WNASurf, avg_weighted_contact_number_k\_4_WNASurf, avg_weighted_contact_number_k\_5_WNASurf, weighted_contact_number_WNADist, avg_weighted_contact_number_k\_2_WNADist, avg_weighted_contact_number_k\_3_WNADist, avg_weighted_contact_number_k\_4_WNADist, avg_weighted_contact_number_k\_5_WNADist                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
-## Usage
-
-To run the code, you need to have Python 3.7 or higher installed on your system. You also need to install the packages listed in the **`requirements.txt`** file. You can do this by running the following command in your terminal:
-
-```         
-pip install -r requirements.txt 
-```
-
-Then, you can run the **`exosite_prediction.py`** script by typing:
-
-```         
-python exosite_prediction.py 
-```
-
-The script will output the accuracy, precision, recall, and F1-score of the model on the test set. It will also save the confusion matrix and the ROC curve as **`confusion_matrix.png`** and **`roc_curve.png`** in the code folder.
-
 ## References
 
 The following papers and websites are the sources of the data and the methods used in this project:
 
--   Neshich, G. *et al.* Using Structural and Physical--Chemical Parameters to Identify, Classify, and Predict Functional Districts in Proteins---The Role of Electrostatic Potential. *Computational Electrostatics for Biological Applications* 227--254 (2015) <doi:10.1007/978-3-319-12211-3_12>.
+- Neshich, G. et al. Using Structural and Physicochemical Parameters to Identify, Classify, and Predict Functional Districts in Proteins—The Role of Electrostatic Potential. Computational Electrostatics for Biological Applications 227–254 (2015). DOI: 10.1007/978-3-319-12211-3_12.
 
--   Open Terminal on Linux/MacOS or Command Prompt on Windows
+- Zlobin, A., Suplatov, D., Kopylov, K., & Švedas, V. CASBench: A Benchmarking Set of Proteins with Annotated Catalytic and Allosteric Sites in Their Structures. Acta Naturae, 11, 74 (2019). PMC: PMC6475866.
 
--   Enter the following into the console (one line at a time)
+- Huang, W., Wang, G., Shen, Q., Liu, X., Lu, S., Geng, L., Huang, Z., & Zhang, J. ASBench: Benchmarking Sets for Allosteric Discovery. Bioinformatics, 31(15), 2598–2600 (2015). DOI: 10.1093/bioinformatics/btv138.
 
-``` console
-git clone 
-jupyter notebook
-```
+- Neshich, G., et al. STING Report: A Convenient Web-Based Application for Graphic and Tabular Presentations of Protein Sequence, Structure, and Function Descriptors from the STING Database. Nucleic Acids Research, 33 (2005). DOI: 10.1093/nar/gki269.
+
+- Neshich, G., et al. The Diamond STING Server: A Multiplatform Environment for Protein Structure Analysis. Nucleic Acids Research, 33 (2005). DOI: 10.1093/nar/gki383.
+
+For more information, see the full list of references in the manuscript and supplementary materials .
+
 
 <br/>
