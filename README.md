@@ -4,21 +4,21 @@
 
 ## Overview
 
-This repository contains the machine learning pipeline and comprehensive datasets used to predict allosteric site-forming residues (AFRs) on proteins. Allosteric sites are critical protein regions that facilitate functional modulation when small molecules or other proteins bind to these sites, often distinct from the active site. This work builds upon the rich structural and physicochemical data contained within **STINGRDB2** to predict exosite-forming residues, leveraging detailed nanoenvironment descriptors at the residue level. By accurately predicting these regions, our tool advances computational methods for drug discovery, protein engineering, and understanding complex protein-protein interactions.
+This repository contains the machine learning pipeline and datasets used to predict allosteric site-forming residues (AFRs) on proteins and as well their evaluation. Allosteric sites are critical protein regions that facilitate functional modulation when small molecules or other proteins bind to these sites, often distinct from the active site. This work builds upon the rich structural and physicochemical data contained within **STINGRDB2** to predict AFRs, leveraging detailed internal protein nanoenvironment descriptors at the residue level. By accurately predicting these regions, our tool advances computational methods for drug discovery, protein engineering, and understanding complex protein-protein interactions.
 
-The **STINGAllo** model developed in this repository improves upon existing methods by incorporating residue-level data rather than limiting analysis to traditional pocket-focused techniques. This approach enables the identification of cryptic allosteric sites, which are often missed by conventional methods.
+The **STINGAllo** model developed in this repository improves upon existing methods by incorporating residue-level data rather than limiting analysis to traditional pocket-focused techniques. This approach enables the identification of cryptic allosteric sites and AFRs on flat surfaces, which are often missed by conventional methods.
 
 ### Research Significance
 
 The prediction of allosteric sites is a key challenge in computational biology and drug discovery. Allosteric regulation can provide a unique mechanism for modulating protein function, allowing for the design of small molecules that have more specific and fine-tuned effects than traditional inhibitors targeting active sites. By predicting AFRs accurately, we pave the way for the discovery of novel therapeutic targets, especially for diseases where allosteric modulation can play a critical role.
 
-Our machine learning model leverages over 298 descriptors derived from **STINGRDB2** to assess the physicochemical properties of amino acid residues, offering a detailed and refined prediction of their allosteric potential. The model achieves robust performance on a test set, with significant improvements in DCC accuracy compared to existing tools.
+Our machine learning model leverages several descriptors derived from **STINGRDB2** to assess the physicochemical properties of amino acid residues, offering a detailed and refined prediction of their allosteric potential. The model achieves robust performance on the ASBench test set, with significant improvements in DCC accuracy compared to existing tools.
 
 ## Features and Capabilities
 
 ### 1. **Nanoenvironment-Based Prediction**
-   - The **STINGAllo** model is based on the nanoenvironment concept, which describes the local structural and physicochemical properties of amino acid residues. This framework allows for the prediction of AFRs at a residue-specific level, improving accuracy over existing methods that rely solely on pocket-based predictions.
-   - Our approach extracts 298 unique descriptors for each residue, sourced from the **Blue Star STING** database, characterizing their environment and potential to participate in allosteric regulation.
+   - The **STINGAllo** model is based on the nanoenvironment concept, which describes the local structural and physicochemical properties of amino acid residues. This framework allows for the prediction of AFRs at a residue-specific level, improving accuracy over existing methods that rely on pocket-based predictions.
+   - Our approach extracts several unique descriptors for each residue, sourced from the **STING** database, characterizing their environment and potential to participate in allosteric regulation.
 
 ### 2. **High Prediction Accuracy**
    - **F1-Score**: 0.64
@@ -26,30 +26,25 @@ Our machine learning model leverages over 298 descriptors derived from **STINGRD
    - **DCC Metric**: Achieves a 60.23% success rate in accurately predicting residue-based AFRs. For cases of exosite regions located on flat protein surfaces, our model demonstrates superior accuracy.
 
 ### 3. **Comparison to Existing Tools**
-   - While traditional methods like **FPocket** focus on identifying binding pockets on proteins, **STINGAllo** takes a more granular approach by analyzing residues individually. This allows it to capture complex or cryptic allosteric sites often missed by other algorithms. 
-   - On benchmark datasets, the model consistently outperforms **FPocket** by providing more spatially precise predictions, as measured by the DCC scores.
+   - While traditional methods focus on identifying binding pockets on proteins, **STINGAllo** takes a more granular approach by analyzing residues individually. This allows it to capture complex or cryptic allosteric sites often missed by other algorithms. 
+   - On benchmark datasets, the model consistently outperforms **PASSer** by providing more spatially precise predictions, as measured by the DCC scores.
 
 ### 4. **Multi-Model Ensemble**
-   - The **STINGAllo** model is trained as an ensemble with three models from **PASSer** (AutoML, Rank, Ensemble), incorporating multiple perspectives to provide robust predictions across a diverse range of proteins.
+   - The **STINGAllo** model is trained as an ensemble with three models from **PASSer models** (AutoML, Rank, Ensemble), incorporating multiple perspectives to provide robust predictions across a diverse range of proteins.
 
 ## Data and Structure
 
 This repository contains several key datasets and files:
 
 ### **1. Allosteric Protein Structures**
-   - Located in the `allosteric_proteins` directory, this dataset contains **235 apo-protein structures** sourced from the [ASBench dataset](https://academic.oup.com/bioinformatics/article/31/15/2598/188062). These structures represent proteins in their unbound states, and their annotations serve as the baseline for predicting exosite-forming regions.
+   - Located in the `allosteric_proteins` directory, this dataset contains **235 apo-protein structures** sourced from the [ASBench dataset](https://academic.oup.com/bioinformatics/article/31/15/2598/188062).
 
-### **2. Protein-Modulator Complexes**
-   - The `protein-modulator_complexes` directory holds **235 PDB files** representing proteins bound to ligands targeting exosites. Issues with missing atomic radii for several PDB entries (e.g., 4AWO, 3F9N) were addressed by obtaining corrected structures from the Protein Data Bank (PDB). Issues with other structures, such as 1PCQ (chain reduction) and 2RDE (replacement), were resolved to maintain dataset integrity.
+### **2. Complete LASA (Loss of Accessible Surface Area) Calculation**
+   - The `complete_LASA` folder provides detailed **LASA** values for each residue across 230 proteins. LASA is calculated as the difference between the solvent-exposed surface area of a residue in its unbound state and the surface area when bound to a ligand. 
 
-### **3. Complete LASA (Loss of Accessible Surface Area) Calculation**
-   - The `complete_LASA` folder provides detailed **LASA** values for each residue across 235 proteins. LASA is calculated as the difference between the solvent-exposed surface area of a residue in its unbound state and the surface area when bound to a ligand. These calculations help in identifying key binding residues and their roles in allosteric regulation.
+### **3. AFR Annotation**
+   - The `afr_annotated` directory contains detailed annotations of residues as **Allosteric Forming Residues (AFRs)** or **Free Residues (FRs)** based on their interactions with ligands. This classification is determined by proximity to the ligand (within 5Å) and whether LASA is positive.
 
-### **4. Exosite Annotation**
-   - The `exosite_annotated` directory contains detailed annotations of residues as **Exosite Forming Residues (EFRs)** or **Free Residues (FRs)** based on their interactions with ligands. This classification is determined by proximity to the ligand (within 5Å) and whether LASA is positive.
-
-### **5. Exosite and Non-Exosite Feature Sets**
-   - The `exosite_residues.txt` and `non_exosite_residues.txt` files store features extracted from the **Blue Star STING** database, with 299 columns detailing residue-specific features. These include structural, physicochemical, and nanoenvironment descriptors.
 
 ## Code
 
