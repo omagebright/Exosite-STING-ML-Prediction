@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+TYR28, LYS206, GLY215, SER226, SER265, GLU277, HIS281, GLY285, ARG289

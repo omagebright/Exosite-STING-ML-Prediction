@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+PHE208, PRO227, ARG268

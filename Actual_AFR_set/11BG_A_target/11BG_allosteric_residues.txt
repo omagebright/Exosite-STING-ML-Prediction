@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ASP14, SER15, ASN24, ASN27, LEU28, CYS31, ASN94, CYS95

@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ARG99, PHE170, ARG217

@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+VAL37, PRO38, THR41, SER143, LEU144, GLU150, GLU151

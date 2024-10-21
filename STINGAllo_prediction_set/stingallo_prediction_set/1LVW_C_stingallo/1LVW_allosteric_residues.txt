@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LEU6, LEU43, LEU106, PHE116

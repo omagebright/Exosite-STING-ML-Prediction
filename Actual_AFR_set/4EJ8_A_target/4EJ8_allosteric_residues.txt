@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+TRP42, PRO44, LYS45, LYS55, VAL56, ARG57

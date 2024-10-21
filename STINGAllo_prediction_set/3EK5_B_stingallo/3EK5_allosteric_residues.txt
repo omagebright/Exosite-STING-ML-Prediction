@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LYS98, ARG100, VAL110, GLU112, HIS122, LYS125, ARG127, ILE214

@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LEU216, GLY235, MET236, THR237, GLY238, THR240, HIS254, ALA255, VAL256

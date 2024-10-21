@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+HIS247, VAL279, GLU411

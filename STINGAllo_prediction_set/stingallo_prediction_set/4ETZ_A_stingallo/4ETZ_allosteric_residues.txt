@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ARG367, ASP370, LEU388, PRO389, THR391, GLY395, TYR399

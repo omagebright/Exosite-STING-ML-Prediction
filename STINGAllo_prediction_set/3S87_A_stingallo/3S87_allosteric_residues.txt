@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ASP226, ILE262

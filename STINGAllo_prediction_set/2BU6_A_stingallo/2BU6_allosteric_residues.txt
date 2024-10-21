@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LEU63, ARG112, VAL126, VAL138, ILE143, PHE146, LEU147

@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ILE26, ARG29, LYS30, VAL33, ARG37, PRO84, GLU87, LEU90, LYS91, PHE93, PRO94, ALA96

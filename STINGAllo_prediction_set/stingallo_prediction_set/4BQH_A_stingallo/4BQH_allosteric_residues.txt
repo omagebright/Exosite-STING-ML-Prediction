@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+GLY117, GLY118, LYS150, GLY233, ASN276, LEU360
