@@ -55,26 +55,6 @@ This repository contains several key datasets and files:
 
 The repository includes Python scripts used for data processing, feature extraction, model training, and evaluation:
 
-### **1. exosite_prediction.py**
-   - The core script responsible for training the machine learning model, evaluating its performance, and generating confusion matrices, ROC curves, and DCC metrics. This script is designed to work with the provided data and features, ensuring reproducibility.
-
-### **2. exosite_utils.py**
-   - A helper module containing utility functions for processing the protein structures, calculating LASA, extracting features from the Blue Star STING database, and preparing the data for machine learning workflows.
-
-### **3. requirements.txt**
-   - This file contains all the dependencies necessary to run the project, including versions for key libraries such as **scikit-learn**, **numpy**, **pandas**, and **matplotlib**.
-
-### Example SQL Queries
-
-We also provide SQL queries for calculating correlations between protein features and retrieving key descriptors from the database:
-
-```sql
-SELECT 
-    (SUM(x*y) - SUM(x) * SUM(y) / COUNT(*)) / 
-    (SQRT(SUM(x*x) - SUM(x) * SUM(x) / COUNT(*)) * SQRT(SUM(y*y) - SUM(y) * SUM(y) / COUNT(*))) as correlation
-FROM 
-    (SELECT acc_isol_surfv as x, acc_ifr_surfv as y FROM Air LIMIT 1000000) as dt;
-```
 
 -   Retrieved descriptors from the STINGRDB2
 
