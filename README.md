@@ -1,80 +1,80 @@
-# Exosite-STING-ML-Prediction - `FB_Omage_etal_2024`
+# STINGAllo - **Omage et al., 2024**
 
-<img src="sting.jpg" style="width: 160px; float: right;"/>
-
-<br/>
-
-<p align="justify">
-
-This repository contains machine learning workflow and processing for the exosite forming residues prediction. Exosites are protein regions that are distant and distinct from the active site, and act as a secondary molecular binding site. They are located on the surfaces of proteins and play important roles in allosteric regulation, substrate recognition, and complex protein-protein interactions. Exosites can modulate protein function by interacting with either small molecules or other proteins. Our models use the STINGRDB2 physicochemical and structural properties of exosites and non-exosites, as inferred by their nanoenvironment, to identify and characterize them. This can help us understand the molecular mechanisms that underlie some aspects of protein function and regulation, and also facilitate the development of novel drugs, modulators, and inhibitors that target these exosites.
+![STINGAllo Logo](sting.jpg)
 
 ## Overview
 
-Our model is based on the nanoenvironment concept, which describes the local structural and physicochemical properties of a protein region. We use a set of 298 descriptors extracted from the Blue Star STING database to characterize the nanoenvironment of each amino acid residue in a protein, using several classifier algorithms. Our model achieves an accuracy of 86.7% and an F1-score of 0.76 on a benchmark dataset of 50 proteins with known exosites.
+This repository contains the machine learning pipeline and comprehensive datasets used to predict allosteric site-forming residues (AFRs) on proteins. Allosteric sites are critical protein regions that facilitate functional modulation when small molecules or other proteins bind to these sites, often distinct from the active site. This work builds upon the rich structural and physicochemical data contained within **STINGRDB2** to predict exosite-forming residues, leveraging detailed nanoenvironment descriptors at the residue level. By accurately predicting these regions, our tool advances computational methods for drug discovery, protein engineering, and understanding complex protein-protein interactions.
 
-## Folder
+The **STINGAllo** model developed in this repository improves upon existing methods by incorporating residue-level data rather than limiting analysis to traditional pocket-focused techniques. This approach enables the identification of cryptic allosteric sites, which are often missed by conventional methods.
 
-The folder contains the following Data/files:
+### Research Significance
 
--   **`allosteric_proteins`**: Retrieved from the [**ASBench**](https://academic.oup.com/bioinformatics/article/31/15/2598/188062?login=false): benchmarking sets for allosteric discovery. This folder contain 235 proteins apo-protein structures.
+The prediction of allosteric sites is a key challenge in computational biology and drug discovery. Allosteric regulation can provide a unique mechanism for modulating protein function, allowing for the design of small molecules that have more specific and fine-tuned effects than traditional inhibitors targeting active sites. By predicting AFRs accurately, we pave the way for the discovery of novel therapeutic targets, especially for diseases where allosteric modulation can play a critical role.
 
--   **`protein-modulator_complexes`**: Retrieved from [ASBench](https://academic.oup.com/bioinformatics/article/31/15/2598/188062?login=false "ASBench: benchmarking sets for allosteric discovery Wenkang Huang, Guanqiao Wang, Qiancheng Shen, Xinyi Liu, Shaoyong Lu, Lv Geng, Zhimin Huang, Jian Zhang") contains 235 proteins in complex with the ligands binding to an exosite. In the PDB files we addressed, issues with missing atomic radius for 4AWO, 3F9N, 1T49, 4DLR, 4C7B, during LASA (*Lost accessible surface area*), this was addressed by replacing them with new PDB files from the protein databank. Issue with 1PCQ was addressed by reducing it to a single chain, 2RDE missing from the folder was simply replaced.
+Our machine learning model leverages over 298 descriptors derived from **STINGRDB2** to assess the physicochemical properties of amino acid residues, offering a detailed and refined prediction of their allosteric potential. The model achieves robust performance on a test set, with significant improvements in DCC accuracy compared to existing tools.
 
-    The work [*Huang et al., 2015*](https://academic.oup.com/bioinformatics/article/31/15/2598/188062?login=false)*,* provided the necessary 3D structures for this study.
+## Features and Capabilities
 
--   **`complete_LASA`**: Folder containing LASA (Loss of Accessible Surface Area) Calculation
+### 1. **Nanoenvironment-Based Prediction**
+   - The **STINGAllo** model is based on the nanoenvironment concept, which describes the local structural and physicochemical properties of amino acid residues. This framework allows for the prediction of AFRs at a residue-specific level, improving accuracy over existing methods that rely solely on pocket-based predictions.
+   - Our approach extracts 298 unique descriptors for each residue, sourced from the **Blue Star STING** database, characterizing their environment and potential to participate in allosteric regulation.
 
-    LASA is a measure of the change in the accessible surface area (ASA) of a protein residue when it forms a complex with another molecule. ASA is the surface area of a molecule that is exposed to the solvent. LASA can be used to identify the residues that are involved in the binding interface of the complex, as well as the residues that are affected by the conformational changes or allosteric effects of the binding.
+### 2. **High Prediction Accuracy**
+   - **F1-Score**: 0.64
+   - **Matthews Correlation Coefficient (MCC)**: 0.64
+   - **DCC Metric**: Achieves a 60.23% success rate in accurately predicting residue-based AFRs. For cases of exosite regions located on flat protein surfaces, our model demonstrates superior accuracy.
 
-    The formula for calculating LASA for a residue is:
+### 3. **Comparison to Existing Tools**
+   - While traditional methods like **FPocket** focus on identifying binding pockets on proteins, **STINGAllo** takes a more granular approach by analyzing residues individually. This allows it to capture complex or cryptic allosteric sites often missed by other algorithms. 
+   - On benchmark datasets, the model consistently outperforms **FPocket** by providing more spatially precise predictions, as measured by the DCC scores.
 
-    > *LASA=ASAapo​−ASAcomplex*
+### 4. **Multi-Model Ensemble**
+   - The **STINGAllo** model is trained as an ensemble with three models from **PASSer** (AutoML, Rank, Ensemble), incorporating multiple perspectives to provide robust predictions across a diverse range of proteins.
 
-    where *ASAapo​* is the ASA of the residue in the unbound protein (apo) structure, and *ASAcomplex​* is the ASA of the residue in the bound protein (complex) structure.
+## Data and Structure
 
-    The folder `complete_LASA` contains the results of the LASA calculation for each residue of 235 proteins.
+This repository contains several key datasets and files:
 
-    The output files are named as `<protein_id>.txt`, where `<protein_id>` is the identifier of the protein.
+### **1. Allosteric Protein Structures**
+   - Located in the `allosteric_proteins` directory, this dataset contains **235 apo-protein structures** sourced from the [ASBench dataset](https://academic.oup.com/bioinformatics/article/31/15/2598/188062). These structures represent proteins in their unbound states, and their annotations serve as the baseline for predicting exosite-forming regions.
 
--   **`exosite_annotated`**: This folder contains the annotated residues based on the residue interacting with the ligand or not as defined by the LASA.
+### **2. Protein-Modulator Complexes**
+   - The `protein-modulator_complexes` directory holds **235 PDB files** representing proteins bound to ligands targeting exosites. Issues with missing atomic radii for several PDB entries (e.g., 4AWO, 3F9N) were addressed by obtaining corrected structures from the Protein Data Bank (PDB). Issues with other structures, such as 1PCQ (chain reduction) and 2RDE (replacement), were resolved to maintain dataset integrity.
 
-``` {.python .console}
+### **3. Complete LASA (Loss of Accessible Surface Area) Calculation**
+   - The `complete_LASA` folder provides detailed **LASA** values for each residue across 235 proteins. LASA is calculated as the difference between the solvent-exposed surface area of a residue in its unbound state and the surface area when bound to a ligand. These calculations help in identifying key binding residues and their roles in allosteric regulation.
 
-If residue is 5A around Ligand and LASA > 0. Return 'EFR'
-else
-Return 'FRs'
-```
+### **4. Exosite Annotation**
+   - The `exosite_annotated` directory contains detailed annotations of residues as **Exosite Forming Residues (EFRs)** or **Free Residues (FRs)** based on their interactions with ligands. This classification is determined by proximity to the ligand (within 5Å) and whether LASA is positive.
 
--   **`exosite_residues.txt`** and **`non_exosite_residues.txt`** files. The features are extracted from the Blue Star STING database and the IPN Dictionary. The table has 299 columns: the first column is the residue ID, and the rest are the feature names and values.
+### **5. Exosite and Non-Exosite Feature Sets**
+   - The `exosite_residues.txt` and `non_exosite_residues.txt` files store features extracted from the **Blue Star STING** database, with 299 columns detailing residue-specific features. These include structural, physicochemical, and nanoenvironment descriptors.
 
 ## Code
 
-The code folder contains the following files:
+The repository includes Python scripts used for data processing, feature extraction, model training, and evaluation:
 
--   **`exosite_prediction.py`**: The main script that trains and evaluates the SVM model on the data. It also generates a confusion matrix and a ROC curve for the model performance.
+### **1. exosite_prediction.py**
+   - The core script responsible for training the machine learning model, evaluating its performance, and generating confusion matrices, ROC curves, and DCC metrics. This script is designed to work with the provided data and features, ensuring reproducibility.
 
--   **`exosite_utils.py`**: A module that contains some helper functions for data processing and feature extraction.
+### **2. exosite_utils.py**
+   - A helper module containing utility functions for processing the protein structures, calculating LASA, extracting features from the Blue Star STING database, and preparing the data for machine learning workflows.
 
--   **`requirements.txt`**: A file that specifies the Python packages and versions required to run the code.
+### **3. requirements.txt**
+   - This file contains all the dependencies necessary to run the project, including versions for key libraries such as **scikit-learn**, **numpy**, **pandas**, and **matplotlib**.
 
-### SQL
+### Example SQL Queries
 
-``` {.sqlmysql .console}
-# Calculating correlations between the tables
+We also provide SQL queries for calculating correlations between protein features and retrieving key descriptors from the database:
 
+```sql
 SELECT 
     (SUM(x*y) - SUM(x) * SUM(y) / COUNT(*)) / 
     (SQRT(SUM(x*x) - SUM(x) * SUM(x) / COUNT(*)) * SQRT(SUM(y*y) - SUM(y) * SUM(y) / COUNT(*))) as correlation
 FROM 
     (SELECT acc_isol_surfv as x, acc_ifr_surfv as y FROM Air LIMIT 1000000) as dt;
-    
-# Sample query for retrieval
 
-SELECT pdb_code, convert(chain_name, char(1)), number, side_chain_angle_3_WNASurf, side_chain_angle_4_WNASurf, side_chain_angle_5_WNASurf, side_chain_angle_6_WNASurf, side_chain_angle_7_WNASurf, side_chain_average_angle_3_WNASurf, side_chain_average_angle_4_WNASurf, side_chain_average_angle_5_WNASurf, side_chain_average_angle_6_WNASurf, side_chain_average_angle_7_WNASurf, neighbors_side_chain_angle_3_WNASurf, neighbors_side_chain_angle_4_WNASurf, neighbors_side_chain_angle_5_WNASurf, neighbors_side_chain_angle_6_WNASurf, neighbors_side_chain_angle_7_WNASurf, side_chain_angle_3_WNADist, side_chain_angle_4_WNADist, side_chain_angle_5_WNADist, side_chain_angle_6_WNADist, side_chain_angle_7_WNADist, side_chain_average_angle_3_WNADist, side_chain_average_angle_4_WNADist, side_chain_average_angle_5_WNADist, side_chain_average_angle_6_WNADist, side_chain_average_angle_7_WNADist, neighbors_side_chain_angle_3_WNADist, neighbors_side_chain_angle_4_WNADist, neighbors_side_chain_angle_5_WNADist, neighbors_side_chain_angle_6_WNADist, neighbors_side_chain_angle_7_WNADist FROM Side_Chain_Orientation_WNA WHERE pdb_code = '2ZMF' AND chain_name = 'A';
-
-
-# Queries wrapped using pymysql in the attached python script
-```
 
 -   Retrieved descriptors from the STINGRDB2
 
