@@ -1,4 +1,4 @@
-# Exosite-STING-ML-Prediction - `FB_Omage_etal_2023`
+# Exosite-STING-ML-Prediction - `FB_Omage_etal_2024`
 
 <img src="sting.jpg" style="width: 160px; float: right;"/>
 
