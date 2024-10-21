@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ASP94, VAL96, LYS99, HIS103, ASP126, TYR140, ARG141

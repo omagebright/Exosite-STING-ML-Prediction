@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+HIS60, MET62, LEU93, HIS95, TRP144, HIS145, SER148

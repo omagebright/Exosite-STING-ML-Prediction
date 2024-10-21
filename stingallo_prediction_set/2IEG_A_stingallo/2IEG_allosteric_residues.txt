@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+VAL40, ARG60, VAL64, TRP67, TRP189, PRO229, ILE486, LYS574

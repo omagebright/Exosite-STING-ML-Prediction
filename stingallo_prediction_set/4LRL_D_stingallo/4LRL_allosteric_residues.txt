@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LYS14, VAL15, PHE16, ARG44, THR55, PHE56, HIS245, ARG326, LYS330

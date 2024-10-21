@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LEU62, ARG132, LEU137

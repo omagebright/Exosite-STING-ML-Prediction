@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+GLU138, THR139, PRO140

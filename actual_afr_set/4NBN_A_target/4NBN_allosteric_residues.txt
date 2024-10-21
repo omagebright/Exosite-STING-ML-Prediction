@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ALA195, SER196, VAL197, TYR198, THR199, LEU200, PRO201, VAL212, GLU214

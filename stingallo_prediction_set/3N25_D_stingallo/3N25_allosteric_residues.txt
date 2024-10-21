@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ARG42, GLY45, ASN69, ARG105, PHE469, PRO470

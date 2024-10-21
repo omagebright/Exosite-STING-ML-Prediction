@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+MET293, ILE323, VAL453

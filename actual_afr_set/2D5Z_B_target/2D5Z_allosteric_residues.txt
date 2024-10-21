@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+TYR35, TRP37, ARG104, LEU105, ASN108, ALA135

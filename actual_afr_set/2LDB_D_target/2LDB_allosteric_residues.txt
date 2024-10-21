@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+ARG171, GLN183, ASN184, HIS186, ALA187, TYR188, GLY207, VAL208, ILE269

@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LYS49, GLY51, PRO52

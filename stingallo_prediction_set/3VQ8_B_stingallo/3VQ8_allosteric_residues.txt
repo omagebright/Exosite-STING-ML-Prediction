@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+TYR83, GLY106, ARG107, PRO109, GLY197, GLU198, ILE200, ILE204

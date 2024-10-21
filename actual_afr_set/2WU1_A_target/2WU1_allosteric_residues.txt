@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+MET1, ARG2, LEU258

@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+LYS763, TYR764, TRP782, PHE791, SER793, GLY795, GLU796

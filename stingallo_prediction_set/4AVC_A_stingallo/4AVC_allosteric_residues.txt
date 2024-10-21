@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+VAL67, ARG80, ALA81, GLY88, GLU89, ARG98, SER99, ARG138, ALA141, PHE142

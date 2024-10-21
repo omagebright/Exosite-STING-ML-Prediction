@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+TYR90, LYS265, SER285, MET347

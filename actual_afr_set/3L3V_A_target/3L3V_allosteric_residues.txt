@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+GLU87, VAL88, ILE89, GLU96, TYR99, LYS103, LYS173

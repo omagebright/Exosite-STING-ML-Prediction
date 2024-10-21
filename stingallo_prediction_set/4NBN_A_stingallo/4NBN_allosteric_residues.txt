@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+SER196, LEU200, PRO201

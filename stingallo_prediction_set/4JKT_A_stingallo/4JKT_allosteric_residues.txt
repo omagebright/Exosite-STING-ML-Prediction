@@ -1,0 +1,3 @@
+Allosteric Site Forming Residues:
+
+PHE323, LEU326, PHE327, LEU328, ASN329, GLU330, ARG392, TYR399
